@@ -1,12 +1,48 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React, { useState } from 'react';
+import Dashboard from '../components/Dashboard.jsx';
+import UploadWardrobe from '../components/UploadWardrobe.jsx';
+import OutfitSuggestions from '../components/OutfitSuggestions.jsx';
+import MyWardrobe from '../components/MyWardrobe.jsx';
+import SavedOutfits from '../components/SavedOutfits.jsx';
 
+/**
+ * Main app component with navigation between different views
+ */
 const Index = () => {
+  const [currentView, setCurrentView] = useState('dashboard');
+
+  /**
+   * Handle navigation between different views
+   * @param {string} view - The view to navigate to
+   */
+  const handleNavigate = (view) => {
+    setCurrentView(view);
+  };
+
+  /**
+   * Render the current view based on state
+   */
+  const renderCurrentView = () => {
+    switch (currentView) {
+      case 'upload':
+        return <UploadWardrobe onNavigate={handleNavigate} />;
+      case 'casual':
+        return <OutfitSuggestions onNavigate={handleNavigate} isFormal={false} />;
+      case 'formal':
+        return <OutfitSuggestions onNavigate={handleNavigate} isFormal={true} />;
+      case 'wardrobe':
+        return <MyWardrobe onNavigate={handleNavigate} />;
+      case 'saved':
+        return <SavedOutfits onNavigate={handleNavigate} />;
+      case 'dashboard':
+      default:
+        return <Dashboard onNavigate={handleNavigate} />;
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      {renderCurrentView()}
     </div>
   );
 };

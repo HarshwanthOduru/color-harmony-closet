@@ -2,95 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* AI Wardrobe Stylist Design System - Fashion-forward color palette */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Fashion-inspired background gradients */
+    --background: 0 0% 99%;
+    --foreground: 240 10% 15%;
 
+    /* Card system with elegant elevation */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Sophisticated purple-based primary palette */
+    --primary: 260 70% 45%;
+    --primary-foreground: 0 0% 98%;
+    --primary-muted: 260 40% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Elegant secondary in warm neutrals */
+    --secondary: 45 15% 95%;
+    --secondary-foreground: 240 10% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted tones for UI elements */
+    --muted: 220 13% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent colors for highlights */
+    --accent: 280 60% 92%;
+    --accent-foreground: 260 70% 45%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Border and input styling */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 260 70% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Fashion-inspired gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(280 60% 55%));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(220 20% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(290 40% 95%));
+    
+    /* Elegant shadows */
+    --shadow-soft: 0 2px 20px -8px hsl(var(--primary) / 0.15);
+    --shadow-medium: 0 8px 30px -12px hsl(var(--primary) / 0.25);
+    --shadow-strong: 0 20px 50px -12px hsl(var(--primary) / 0.35);
+    
+    /* Animation curves */
+    --ease-wardrobe: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 240 10% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 8% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 8% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 260 70% 60%;
+    --primary-foreground: 240 10% 8%;
+    --primary-muted: 260 30% 25%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 240 6% 18%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240 6% 18%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 280 30% 20%;
+    --accent-foreground: 280 60% 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 98%;
+    --warning: 38 85% 55%;
+    --warning-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 260 70% 60%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(280 60% 50%));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(240 8% 16%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(280 30% 25%));
+    
+    --shadow-soft: 0 2px 20px -8px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 30px -12px hsl(0 0% 0% / 0.4);
+    --shadow-strong: 0 20px 50px -12px hsl(0 0% 0% / 0.5);
   }
 }
 
@@ -100,6 +114,56 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/40 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/60;
+  }
+}
+
+@layer components {
+  /* Fashion-forward component styles */
+  .wardrobe-card {
+    @apply bg-gradient-to-br from-card to-muted/20 backdrop-blur-sm;
+    @apply border border-border/50 rounded-xl;
+    @apply transition-all duration-300 ease-[var(--ease-wardrobe)];
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .wardrobe-card:hover {
+    @apply scale-[1.02] border-primary/30;
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+  
+  .accent-gradient {
+    background: var(--gradient-accent);
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 dark:bg-white/5 backdrop-blur-xl;
+    @apply border border-white/20 dark:border-white/10;
   }
 }
